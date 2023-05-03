@@ -1,0 +1,42 @@
+@url = http://localhost:5000/api/v1/category
+
+### Create category
+POST {{url}}
+Content-Type: application/json
+
+{
+  "name": "Danh muc 1",
+  "slug": "Danh-muc-1",
+  "level": 2,
+  "parent_id": "63c7e0ed519fd00e0f6358b3"
+}
+
+### Get all
+GET {{url}}?where=level,1
+
+### Get with children
+GET {{url}}/children
+
+
+### Get by id
+GET {{url}}/63c7e0b6aea29d67a31ef694
+
+
+### Get by parent id
+GET {{url}}/parent/63c7d939855f5cfe24a43bf7
+
+
+### Delete 
+DELETE  {{url}}/63c7e0b6aea29d67a31ef694?is_delete=true
+
+### Update
+PATCH {{url}}/63c7e0b6aea29d67a31ef694
+Content-Type: application/json
+
+{
+  "name": "Danh mục 1",
+  "level": 4
+}
+
+### Get by slug
+GET {{url}}/slug/Danh-muc-1

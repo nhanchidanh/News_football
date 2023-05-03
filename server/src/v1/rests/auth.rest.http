@@ -1,0 +1,55 @@
+@url = http://localhost:5000/api/v1/auth
+
+### sign up
+POST {{url}}/sign-up
+Content-Type: application/json
+
+{
+  "email": "nhanchidanh@gmail.com",
+  "password": "sdfkslfds"
+}
+
+### Verify account
+GET {{url}}/verify/nhanchidanh@gmail.com?token=$2b$10$AX2DICjg1wH8UYA2781tDOhhhcNwfPXUbmQaHakQ/KYtlUtSgmdR2
+
+### sign in
+POST {{url}}/sign-in
+Content-Type: application/json
+
+{
+  "email": "nhanchidanh@gmail.com",
+  "password": "nhanchidanh"
+}
+
+### Forgot password
+POST {{url}}/forgot-password
+Content-Type: application/json
+
+{
+  "email": "nhanchidanh@gmail.com"
+}
+
+### Change password
+POST {{url}}/forgot-password/nhanchidanh@gmail.com?token=$2b$10$rnlQb1Elf24MHica7L5EH.jIxToPZkXyS7AzQq3dEQBVJxyY4c1Qi
+Content-Type: application/json
+
+{
+  "password": "11111111"
+}
+
+
+### Get current user
+GET {{url}}/sign-in
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYzYzNkYzk5MDU3MDhmMjU1Y2E0ODQ5ZSIsImVtYWlsIjoiZ2luZ2E1NTA1MDVAZ21haWwuY29tIiwiZnVsbF9uYW1lIjoiIiwicm9sZSI6IlVTRVIiLCJpbWFnZSI6IiIsImlzX3ZlcmlmaWVkIjp0cnVlfSwiaWF0IjoxNjc0MDAwMzg0LCJleHAiOjE2NzQwMDA0MDR9.e_C-DQQnNM6DKMfVvpQYnCKIZI_OjZhuxOBNgKrcrOM
+
+### Refresh Token
+GET {{url}}/refresh-token
+
+
+### Resend verify account
+POST {{url}}/resend-verify-account
+Content-Type: application/json
+
+{
+  "email": "nhanchidanh@gmail.com"
+}
