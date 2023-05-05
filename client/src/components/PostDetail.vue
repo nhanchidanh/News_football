@@ -30,19 +30,16 @@ export default defineComponent({
     </div>
 
     <div>
-      <v-card-text class="text-h4 my-5">{{ post.title }}</v-card-text>
+      <p class="text-h4 my-5">{{ post.title }}</p>
 
-      <v-card-subtitle>
+      <p>
         <span class="font-weight-bold text-h6 me-3">{{ post.author }}</span>
         <span>{{ timeStamp }}</span>
-      </v-card-subtitle>
+      </p>
 
-      <v-card-text>{{ post.detail_text }}</v-card-text>
+      <i class="mb-2">{{ post.detail_text }}</i>
 
-      <v-card-text
-        class="w-100 overflow-hidden"
-        v-html="post.detail_html"
-      ></v-card-text>
+      <div v-html="post.detail_html"></div>
     </div>
   </v-content>
 </template>

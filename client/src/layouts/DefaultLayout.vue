@@ -96,7 +96,7 @@ export default defineComponent({
         variant="outlined"
         color="success"
       >
-        Quản trị
+        Quản trị viên
       </v-btn>
 
       <div v-else-if="!accessToken">
